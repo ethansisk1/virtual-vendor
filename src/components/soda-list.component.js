@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
+import '../style.css';
+
+import background from '../soda.jpg';
+
 export default class SodaList extends Component {
 
   constructor(props) {
@@ -55,7 +59,10 @@ export default class SodaList extends Component {
   render() {
     return (
     <div>
-      <table class="center">
+    <div class='split left'>
+      <img src={background} class='center' data-rotate='90'></img>
+    </div>
+      <table class='table split right'>
       	<thead>
       	 <tr>
       	 	<th>Name</th>
@@ -64,7 +71,7 @@ export default class SodaList extends Component {
       	 </tr>
       	</thead>
       	<tbody>
-      		{this.state.sodas.map((soda, index) => (<tr key={soda._id}> <td>{soda.name}</td> <td>${soda.price}</td> <td><button onClick={this.buy.bind(this, soda._id, soda, index)}>Buy</button></td> </tr>))}
+      		{this.state.sodas.map((soda, index) => (<tr key={soda._id}> <td>{soda.name}</td> <td>${soda.price}</td> <td><button onClick={this.buy.bind(this, soda._id, soda, index)} class='button'>Buy</button></td> </tr>))}
       	</tbody>
       	</table>
       </div>

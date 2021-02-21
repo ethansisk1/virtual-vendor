@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../style.css'
 
 export default class CreateSoda extends Component {
 
@@ -31,7 +32,7 @@ export default class CreateSoda extends Component {
   render() {
     return (
     <div>
-      <table class="center">
+      <table class='table'>
       	<thead>
       	 <tr>
       	 	<th>Name</th>
@@ -48,6 +49,7 @@ export default class CreateSoda extends Component {
       				<td>${soda.price}</td> 
       				<td>{soda.quantity}</td>
       				<td>{soda.description}</td>
+              <td><button class='button'>Edit</button></td>
                 </tr>))}
       	</tbody>
       	</table>
