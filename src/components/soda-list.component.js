@@ -55,9 +55,18 @@ export default class SodaList extends Component {
   render() {
     return (
     <div>
-      <ul>
-      {this.state.sodas.map((soda, index) => <li>{soda.name}, {soda.description}, ${soda.price}, {soda.quantity} <button onClick={this.buy.bind(this, soda._id, soda, index)}>Buy</button></li>)}
-      </ul>
+      <table class="center">
+      	<thead>
+      	 <tr>
+      	 	<th>Name</th>
+      	 	<th>Price</th>
+      	 	<th>Buy</th>
+      	 </tr>
+      	</thead>
+      	<tbody>
+      		{this.state.sodas.map((soda, index) => (<tr key={soda._id}> <td>{soda.name}</td> <td>${soda.price}</td> <td><button onClick={this.buy.bind(this, soda._id, soda, index)}>Buy</button></td> </tr>))}
+      	</tbody>
+      	</table>
       </div>
     );
   }

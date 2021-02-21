@@ -24,8 +24,8 @@ router.route('/add').post((req, res) => {
 });
 
 // get a specific soda
-router.route('/:name').get((req, res) => {
-	Soda.find({'name': {$regex:req.params.name}})
+router.route('/:id').get((req, res) => {
+	Soda.findById(req.params.id)
 	.then(soda => res.json(soda))
 	.catch(err => res.status(400).json('Error: ' + err));
 });

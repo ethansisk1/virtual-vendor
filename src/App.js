@@ -13,7 +13,7 @@ function App() {
      <Navbar />
       <br/>
       <Route path="/" exact component={SodaList} />
-      <Route path="/create" component={CreateSoda} />
+      <Route path="/edit" component={CreateSoda} />
    </div>
    </Router>
  );
