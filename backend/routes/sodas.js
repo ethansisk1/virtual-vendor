@@ -24,8 +24,8 @@ router.route('/add').post((req, res) => {
 });
 
 // get a specific soda
-router.route('/:id').get((req, res) => {
-	Soda.findById(req.params.id)
+router.route('/:name').get((req, res) => {
+	Soda.find({'name': {$regex:req.params.name}})
 	.then(soda => res.json(soda))
 	.catch(err => res.status(400).json('Error: ' + err));
 });
@@ -36,6 +36,19 @@ router.route('/:id').delete((req, res) => {
 	.then(() => res.json('Soda Deleted'))
 	.catch(err => res.status(400).json('Error: ' + err));
 });
+
+router.route('/buy/:id').post((req, res) => {
+	Soda.findById(req.params.id)
+	.then(soda => {
+		if (soda.quantity > 0) {
+		soda.quantity = soda.quantity - 1;
+		soda.save()
+		.then(() => res.json('Soda Bought'))
+		.catch(err => res.status(400).json('Error: ' + err));
+		}
+})
+	.catch(err => res.status(400).json('Error: ' + err));
+})
 
 // update a specific soda
 router.route('/update/:id').post((req, res) => {
