@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import axios from 'axios';
 import '../style.css'
 
 export default class CreateSoda extends Component {
 
   constructor(props) {
+
   	super(props);
   	this.state = {sodas: [],
   				  inEditMode: false,
