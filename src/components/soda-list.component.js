@@ -67,11 +67,12 @@ export default class SodaList extends Component {
       	 <tr>
       	 	<th>Name</th>
       	 	<th>Price</th>
+          <th>Quantity</th>
       	 	<th>Buy</th>
       	 </tr>
       	</thead>
       	<tbody>
-      		{this.state.sodas.map((soda, index) => (<tr key={soda._id}> <td>{soda.name}</td> <td>${soda.price}</td> <td><button onClick={this.buy.bind(this, soda._id, soda, index)} class='button'>Buy</button></td> </tr>))}
+      		{this.state.sodas.map((soda, index) => (<tr key={soda._id}> <td>{soda.name}</td> <td>${soda.price}</td> <td>{soda.quantity}</td> <td><button onClick={this.buy.bind(this, soda._id, soda, index)} class='button'>Buy</button></td> </tr>))}
       	</tbody>
       	</table>
       </div>
