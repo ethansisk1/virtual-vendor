@@ -49,9 +49,9 @@ Example: {'name': 'NiceSoda', 'description': tasty, 'price': 1, quantity: 10}
 `/buy/:id`: Used by the client side of virtual-vendor.
 Decrements quantity of soda specified by id in the database.
 
-`update/:id`: Updates the soda specified by id. Format updated
+`/update/:id`: Updates the soda specified by id. Format updated
 data in the same way described in `/add`.
 
 ### `DELETE Request Routes`
 
-`delete/:id`: Deletes the soda specified by id in the database.
+`/delete/:id`: Deletes the soda specified by id in the database.

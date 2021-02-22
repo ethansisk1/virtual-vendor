@@ -31,7 +31,7 @@ router.route('/:id').get((req, res) => {
 });
 
 // delete a specific soda
-router.route('delete/:id').delete((req, res) => {
+router.route('/delete/:id').delete((req, res) => {
 	Soda.findByIdAndDelete(req.params.id)
 	.then(() => res.json('Soda Deleted'))
 	.catch(err => res.status(400).json('Error: ' + err));
